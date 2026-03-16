@@ -369,19 +369,20 @@ void ejercicio17(int n){
 // - pares descendentes desde 20: 20,18,16...
 // =====================================================
 void ejercicio18(int n){
-    int impar = 1;
-    int parDesc = 20;
-
-    for(int i = 1; i <= n; i++){
-        if(i % 2 != 0){
-            cout << impar << " , ";
-            impar += 2;
-        }else{
-            cout << parDesc << " , ";
-            parDesc -= 2;
+    int a=1,b=20;
+    if(n>22){
+        cout<<"Error .....";
+    }else{
+        for(int i=1;i<=n;i++){
+            if(i%2==1){
+               cout<<a<<" , ";
+               a+=2;
+            }else{
+                cout<<b<<" , ";
+                b-=2;
+            }
         }
     }
-    cout << "..." << endl;
 }
 
 // =====================================================
@@ -520,30 +521,22 @@ void ejercicio24(int n){
 }
 
 // =====================================================
-// EJERCICIO 25
-// Serie: 1, -3, 9, -13, 25, -31...
+ //EJERCICIO 25
+// Serie: 1, -3, 9, -13, 25, -31, 49,-57
 // Lógica asumida:
 // positivos -> cuadrados impares: 1,9,25...
-// negativos -> secuencia dada en arreglo
-// Aquí el enunciado también viene medio torcido, así que
-// se arma una solución consistente con lo mostrado.
+// negativos -> cuadrados pares -1,-3,-5,-7..: 1,9,25...
 // =====================================================
 void ejercicio25(int n){
-    int positivos[] = {1, 9, 25, 49, 81, 121};
-    int negativos[] = {-3, -13, -31, -57, -91, -133};
-
-    int p = 0, q = 0;
-
-    for(int i = 1; i <= n; i++){
-        if(i % 2 != 0){
-            cout << positivos[p] << " , ";
-            p++;
+    int s=1;
+    for(int i=1;i<=n;i++){
+        if(i%2==0){
+             cout<<((i*i-s)*-1)<<" , ";
+             s+=2;
         }else{
-            cout << negativos[q] << " , ";
-            q++;
+            cout<<i*i<<" , ";
         }
     }
-    cout << "..." << endl;
 }
 
 // =====================================================
